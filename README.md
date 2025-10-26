@@ -14,8 +14,7 @@ FlowDesk is a comprehensive ticket management system designed to help teams mana
 - [Installation](#installation)
 - [Usage](#usage)
 - [Authentication & Stores](#authentication--stores)
-- [Deployment](#deployment)
-- [License](#license)
+- [Author](#author)
 
 ---
 
@@ -25,7 +24,7 @@ Insert your live demo URL here, for example:
 
 ```
 
-[https://flowdesk.vercel.app](https://flowdesk.vercel.app)
+[https://ticket-management-system-vue.vercel.app/](https://ticket-management-system-vue.vercel.app/)
 
 ```
 
@@ -77,6 +76,8 @@ Ticket-Management-System/
 ---
 
 ## Installation
+
+---
 
 1. Clone the repository:
 
