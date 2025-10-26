@@ -65,7 +65,7 @@ const goToSignUp = () => {
           efficiently. Here's how:
         </p>
       </header>
-      <ul class="list-none flex flex-col gap-(--space-sm) lg:gap-(--space-lg) justify-center md:flex-row md:flex-wrap mb-8">
+      <ul class="list-none flex flex-col gap-(--space-md) lg:gap-(--space-lg) justify-center md:flex-row md:flex-wrap mb-8">
         <li v-for="feature in features" :key="feature.id">
           <FeatureCard
             :icon-path="feature.iconPath"
