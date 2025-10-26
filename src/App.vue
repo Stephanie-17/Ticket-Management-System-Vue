@@ -1,11 +1,19 @@
-<script setup></script>
+<script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import NavBar from '@/components/NavBar.vue'
+import AppFooter from '@/components/AppFooter.vue'
+
+const route = useRoute()
+const showNavBar = computed(() => route.path !== '/dashboard' && route.path !== '/tickets')
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="flex flex-col min-h-screen">
+    <NavBar v-if="showNavBar" />
+    <main class="flex-1">
+      <router-view />
+    </main>
+    <AppFooter />
+  </div>
 </template>
-
-<style scoped></style>
