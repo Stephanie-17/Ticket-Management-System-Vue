@@ -1,12 +1,18 @@
 <script setup>
-import { computed } from 'vue'
+import {  computed } from 'vue'
 import { useAuthStore } from '@/stores/authStore'
 import { useTicketStore } from '@/stores/ticketStore'
 import { useRouter } from 'vue-router'
 
 const auth = useAuthStore()
 const ticketsStore = useTicketStore()
-const router = useRouter()
+const router = useRouter();
+
+
+  if (!auth.isAuthenticated) {
+    router.push('/sign-up')
+  }
+
 
 const user = computed(() => auth.user)
 const tickets = computed(() => ticketsStore.tickets)
@@ -22,9 +28,10 @@ const goToTickets = () => {
 </script>
 
 <template>
-  <main class="max-w-7xl mx-auto bg-white rounded-2xl shadow-lg p-8 space-y-(--space-lg) mt-(--space-lg)">
+
+  <main v-if="user" class="max-w-7xl mx-auto bg-white rounded-2xl shadow-lg p-8 space-y-(--space-lg) mt-(--space-lg)">
     <h1 class="text-4xl font-extrabold text-gray-900 mb-4 sm:mb-0">
-      Welcome, {{ user.name }}
+      Welcome, {{ user.name || '' }}
     </h1>
     <p class="text-lg text-gray-600 mt-3">
       Here you can manage your tickets, view analytics, and make adjustments

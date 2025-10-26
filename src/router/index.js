@@ -2,7 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LandingPage from '@/views/LandingPage.vue'
 import AuthForm from '@/views/AuthForm.vue'
-import DashBoard from '@/views/Dashboard.vue'
+import DashBoard from '@/views/DashBoard.vue'
 import TicketManagement from '@/views/TicketManagement.vue'
 
 const routes = [

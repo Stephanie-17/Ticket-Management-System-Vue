@@ -9,6 +9,10 @@ const auth = useAuthStore()
 const ticketsStore = useTicketStore()
 const router = useRouter()
 
+if (!auth.isAuthenticated) {
+   router.push('/sign-up')
+}
+
 const editId = ref(null)
 const editTitle = ref('')
 const editDescription = ref('')
@@ -47,7 +51,7 @@ function goBack() {
 </script>
 
 <template>
-  <main class="max-w-7xl mx-auto bg-white rounded-2xl shadow-lg p-4 sm:p-8 space-y-(--space-lg) mt-(--space-lg)">
+  <main v-if="auth.isAuthenticated" class="max-w-7xl mx-auto bg-white rounded-2xl shadow-lg p-4 sm:p-8 space-y-(--space-lg) mt-(--space-lg)">
     <header class="flex mt-4 justify-between items-center mb-8 relative">
       <h1 class="sm:text-4xl text-2xl font-extrabold text-gray-900 mb-4 sm:mb-0">
         {{ user.name }}'s Tickets
