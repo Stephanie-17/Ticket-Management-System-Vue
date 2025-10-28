@@ -8,6 +8,19 @@
   ],
   "routes": [
     {
+      "src": "/(.*\\.svg)",
+      "headers": {
+        "Content-Type": "image/svg+xml"
+      },
+      "continue": true
+    },
+    {
+      "src": "/(.*\\.ico)",
+      "headers": {
+        "Content-Type": "image/x-icon"
+      }
+    },
+    {
       "src": "/assets/(.*)",
       "headers": {
         "cache-control": "public, max-age=31536000, immutable"
