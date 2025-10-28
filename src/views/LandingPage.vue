@@ -7,13 +7,13 @@ const router = useRouter()
 const features = [
   {
     id: 1,
-    iconPath: 'https://placehold.co/64x64/4a90e2/white?text=A',
+    iconPath: '/automated-icon.svg',
     feature: 'Automated Ticket Routing',
     desc: 'Eliminate manual sorting. FlowDesk automatically assigns tickets to the right team or agent based on priority, topic, and workload. We ensure that every request is handled by the right expert.',
   },
   {
     id: 2,
-    iconPath: 'https://placehold.co/64x64/7b68ee/white?text=U',
+    iconPath: '/unified-icon.svg',
     feature: 'Unified Communication Hub',
     desc: 'Keep every conversation in one place. Email, chat, and internal notes all live within FlowDesk, giving your team full context and your customers faster, more personalized responses.',
   },
