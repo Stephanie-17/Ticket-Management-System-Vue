@@ -11,7 +11,7 @@ export default defineConfig({
     vue(),
     vueJsx(),
     vueDevTools(),
-     tailwindcss(),
+    tailwindcss(),
   ],
   base: '/',
   resolve: {
@@ -19,4 +19,15 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        chunkFileNames: 'js/[name]-[hash].js',
+        entryFileNames: 'js/[name]-[hash].js',
+        assetFileNames: '[ext]/[name]-[hash].[ext]'
+      }
+    }
+  }
 })
